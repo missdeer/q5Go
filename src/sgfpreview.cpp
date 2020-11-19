@@ -78,7 +78,16 @@ void SGFPreview::setPath(QString path)
 			m_game = sgf2record (*sgf, QTextCodec::codecForName (encodingList->currentText ().toLatin1 ()));
 		} else {
             f.seek(0);
-            auto        data  = f.readAll();
+            auto        data = f.readAll();
+            QStringList bom  = {"\x00\x00\xfe\xff", "\xff\xfe\x00\x00", "\xef\xbb\xbf", "\xff\xfe", "\xfe\xff"};
+            for (const auto &b : bom)
+            {
+                if (data.left(b.length()) == b)
+                {
+                    data.mid(b.length()); // remove BOM
+                    break;
+                }
+            }
             QTextCodec *codec = nullptr;
             for (int i = 0; i < encodingList->count(); i++)
             {
@@ -104,10 +113,10 @@ void SGFPreview::setPath(QString path)
         const game_info &info = m_game->info();
         File_WhitePlayer->setText(QString::fromStdString(info.name_w));
         File_BlackPlayer->setText(QString::fromStdString(info.name_b));
-        File_Date->setText (QString::fromStdString (info.date));
-		File_Handicap->setText (QString::number (info.handicap));
-		File_Result->setText (QString::fromStdString (info.result));
-		File_Komi->setText (QString::number (info.komi));
+        File_Date->setText(QString::fromStdString(info.date));
+        File_Handicap->setText(QString::number(info.handicap));
+        File_Result->setText(QString::fromStdString(info.result));
+        File_Komi->setText (QString::number (info.komi));
 		File_Size->setText (QString::number (st->get_board ().size_x ()));
 		File_Event->setText (QString::fromStdString (info.event));
 		File_Round->setText (QString::fromStdString (info.round));
