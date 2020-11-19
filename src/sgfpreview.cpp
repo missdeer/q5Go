@@ -77,20 +77,34 @@ void SGFPreview::setPath(QString path)
 		if (overwriteSGFEncoding->isChecked ()) {
 			m_game = sgf2record (*sgf, QTextCodec::codecForName (encodingList->currentText ().toLatin1 ()));
 		} else {
-			m_game = sgf2record (*sgf, nullptr);
-		}
-		m_game->set_filename (path.toStdString ());
+            f.seek(0);
+            auto        data  = f.readAll();
+            QTextCodec *codec = nullptr;
+            for (int i = 0; i < encodingList->count(); i++)
+            {
+                QTextCodec::ConverterState state;
+                auto *                     c    = QTextCodec::codecForName(encodingList->itemText(i).toLatin1());
+                const QString              text = c->toUnicode(data.constData(), data.size(), &state);
+                if (state.invalidChars == 0)
+                {
+                    codec = c;
+                    break;
+                }
+            }
+            m_game = sgf2record(*sgf, codec);
+        }
+        m_game->set_filename(path.toStdString());
 
-		boardView->reset_game (m_game);
-		game_state *st = m_game->get_root ();
-		for (int i = 0; i < 20 && st->n_children () > 0; i++)
-			st = st->next_primary_move ();
-		boardView->set_displayed (st);
+        boardView->reset_game(m_game);
+        game_state *st = m_game->get_root();
+        for (int i = 0; i < 20 && st->n_children() > 0; i++)
+            st = st->next_primary_move();
+        boardView->set_displayed(st);
 
-		const game_info &info = m_game->info ();
-		File_WhitePlayer->setText (QString::fromStdString (info.name_w));
-		File_BlackPlayer->setText (QString::fromStdString (info.name_b));
-		File_Date->setText (QString::fromStdString (info.date));
+        const game_info &info = m_game->info();
+        File_WhitePlayer->setText(QString::fromStdString(info.name_w));
+        File_BlackPlayer->setText(QString::fromStdString(info.name_b));
+        File_Date->setText (QString::fromStdString (info.date));
 		File_Handicap->setText (QString::number (info.handicap));
 		File_Result->setText (QString::fromStdString (info.result));
 		File_Komi->setText (QString::number (info.komi));
