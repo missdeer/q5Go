@@ -1,20 +1,21 @@
-#include <QDialog>
 #include <QAction>
+#include <QDialog>
 
 namespace Ui
 {
-	class TipsDialog;
+    class TipsDialog;
 };
 
 class TipsDialog : public QDialog
 {
-	Ui::TipsDialog *ui;
-	int m_idx = 0;
-	QAction *leftAction {};
-	QAction *rightAction {};
+    Ui::TipsDialog *ui;
+    int             m_idx = 0;
+    QAction *       leftAction {};
+    QAction *       rightAction {};
 
-	void set_tip ();
+    void set_tip();
+
 public:
-	TipsDialog (QWidget *);
-	~TipsDialog ();
+    TipsDialog(QWidget *);
+    ~TipsDialog();
 };

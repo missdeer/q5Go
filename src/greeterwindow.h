@@ -5,16 +5,18 @@
 
 namespace Ui
 {
-	class GreeterWindow;
+    class GreeterWindow;
 };
 
-class GreeterWindow : public QMainWindow {
-	Q_OBJECT
-	Ui::GreeterWindow *ui;
+class GreeterWindow : public QMainWindow
+{
+    Q_OBJECT
+    Ui::GreeterWindow *ui;
 
-	void enable_buttons ();
+    void enable_buttons();
+
 public:
-	GreeterWindow (QWidget *);
-	~GreeterWindow ();
+    GreeterWindow(QWidget *);
+    ~GreeterWindow();
 };
 #endif

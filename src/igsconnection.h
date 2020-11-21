@@ -8,8 +8,8 @@
 #define IGSCONNECTION_H
 
 #include <QObject>
-#include <QTcpSocket>
 #include <QString>
+#include <QTcpSocket>
 
 class QTextCodec;
 struct Host;
@@ -18,52 +18,53 @@ struct Host;
 
 class IGSConnection : public QObject
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	QWidget *m_lv_p, *m_lv_g;
+    QWidget *m_lv_p, *m_lv_g;
+
 public:
-	IGSConnection(QWidget *, QWidget *);
-	virtual ~IGSConnection();
+    IGSConnection(QWidget *, QWidget *);
+    virtual ~IGSConnection();
 
-	bool isConnected();
-	bool openConnection(const Host &);
-	bool closeConnection();
-	void sendTextToHost(QString txt, bool ignoreCodec=false, bool log=true);
+    bool isConnected();
+    bool openConnection(const Host &);
+    bool closeConnection();
+    void sendTextToHost(QString txt, bool ignoreCodec = false, bool log = true);
 
 signals:
-	void signal_text_to_app(const QString &);
+    void signal_text_to_app(const QString &);
 
 protected:
-	virtual bool checkPrompt(const QString &);
+    virtual bool checkPrompt(const QString &);
 
-	void sendTextToApp (const QString &);
+    void sendTextToApp(const QString &);
 
 private slots:
-	void OnHostFound();
-	void OnConnected();
-	void OnReadyRead();
-	void OnConnectionClosed();
-	void OnDelayedCloseFinish();
-	void OnError(QAbstractSocket::SocketError);
+    void OnHostFound();
+    void OnConnected();
+    void OnReadyRead();
+    void OnConnectionClosed();
+    void OnDelayedCloseFinish();
+    void OnError(QAbstractSocket::SocketError);
 
 private:
-	QTcpSocket *qsocket;
-	QTextCodec *textCodec;
+    QTcpSocket *qsocket;
+    QTextCodec *textCodec;
 
-	int len_saved_data;
-	char *saved_data;
-	//struct USERINFO {
-	QString username;
-	QString password;
-	//}  userInfo;
+    int   len_saved_data;
+    char *saved_data;
+    // struct USERINFO {
+    QString username;
+    QString password;
+    //}  userInfo;
 
-	enum {
-		LOGIN,	// parse will search for login prompt
-		PASSWORD,	// parse will search for password prompt
-		SESSION,	// logged in
-		AUTH_FAILED	// wrong user/pass
-	} authState;
+    enum
+    {
+        LOGIN,      // parse will search for login prompt
+        PASSWORD,   // parse will search for password prompt
+        SESSION,    // logged in
+        AUTH_FAILED // wrong user/pass
+    } authState;
 };
 
 #endif
-
