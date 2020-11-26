@@ -1,3 +1,5 @@
+#include <string>
+
 #include <QDataStream>
 #include <QDir>
 #include <QFile>
@@ -5,12 +7,11 @@
 #include <QRunnable>
 #include <QSemaphore>
 #include <QThreadPool>
-#include <string>
-
-#include "pattern.h"
 
 #include "gamedb.h"
+#include "goboard.h"
 #include "gogame.h"
+#include "pattern.h"
 
 struct coord_transform_none;
 struct coord_transform_r90;
