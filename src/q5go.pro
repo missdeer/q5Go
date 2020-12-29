@@ -1,5 +1,5 @@
 TEMPLATE	      = app
-CONFIG		     += qt warn_on thread c++14
+CONFIG		     += qt warn_on thread c++17
 FORMS	      = gui_dialog.ui \
 		analyze_gui.ui \
 		autodiags_gui.ui \
