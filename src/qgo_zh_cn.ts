@@ -3505,7 +3505,7 @@ This should be a filename, with &quot;%n&quot; somewhere to indicate where the c
     <name>NewAIGameDlg</name>
     <message>
         <source>Play engine from current position</source>
-        <translation type="unfinished"></translation>
+        <translation>从当前位置开始启动引擎</translation>
     </message>
 </context>
 <context>
@@ -3556,11 +3556,11 @@ This should be a filename, with &quot;%n&quot; somewhere to indicate where the c
     </message>
     <message>
         <source>Square board size</source>
-        <translation type="unfinished">等边棋盘尺寸</translation>
+        <translation>等边棋盘尺寸</translation>
     </message>
     <message>
         <source>Rectangular board</source>
-        <translation type="unfinished">不等边棋盘尺寸</translation>
+        <translation>不等边棋盘尺寸</translation>
     </message>
     <message>
         <source>x</source>
@@ -3568,31 +3568,31 @@ This should be a filename, with &quot;%n&quot; somewhere to indicate where the c
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished">时间</translation>
+        <translation>时间</translation>
     </message>
     <message>
         <source>Main time (minutes):</source>
-        <translation type="unfinished">基本用时 (分钟):</translation>
+        <translation>基本用时 (分钟):</translation>
     </message>
     <message>
         <source>60</source>
-        <translation type="unfinished">60</translation>
+        <translation>60</translation>
     </message>
     <message>
         <source>Overtime</source>
-        <translation type="unfinished">限时</translation>
+        <translation>限时</translation>
     </message>
     <message>
         <source>10</source>
-        <translation type="unfinished">10</translation>
+        <translation>10</translation>
     </message>
     <message>
         <source>Period (minutes):</source>
-        <translation type="unfinished">每阶段用时 (分钟):</translation>
+        <translation>每阶段用时 (分钟):</translation>
     </message>
     <message>
         <source>Stones per period:</source>
-        <translation type="unfinished">每阶段手数:</translation>
+        <translation>每阶段手数:</translation>
     </message>
 </context>
 <context>
@@ -6549,11 +6549,11 @@ If you are using Jago, make sure the &quot;Pure SGF&quot; option is checked befo
     </message>
     <message>
         <source>Event:</source>
-        <translation type="unfinished">比赛：</translation>
+        <translation>比赛：</translation>
     </message>
     <message>
         <source>Round:</source>
-        <translation type="unfinished">轮次：</translation>
+        <translation>轮次：</translation>
     </message>
 </context>
 <context>
@@ -6608,31 +6608,31 @@ If you are using Jago, make sure the &quot;Pure SGF&quot; option is checked befo
     </message>
     <message>
         <source>Stones:</source>
-        <translation type="unfinished"></translation>
+        <translation>棋子：</translation>
     </message>
 </context>
 <context>
     <name>SlideView</name>
     <message>
         <source>Export slide as</source>
-        <translation type="unfinished"></translation>
+        <translation>导出幻灯片为</translation>
     </message>
     <message>
         <source>Images (*.png *.xpm *.jpg);;All Files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>图像 (*.png *.xpm *.jpg);;全部文件 (*)</translation>
     </message>
     <message>
         <source>Error while saving</source>
-        <translation type="unfinished"></translation>
+        <translation>保存时出错</translation>
     </message>
     <message>
         <source>An error occurred while saving. The file could not be saved.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>保存时发现了错误。文件不能保存。</translation>
     </message>
     <message>
         <source>Filename pattern not set</source>
-        <translation type="unfinished"></translation>
+        <translation>文件名模式未设置</translation>
     </message>
     <message>
         <source>Please enter a filename pattern which includes &quot;%n&quot; where the number should be substituted.</source>
@@ -6640,7 +6640,7 @@ If you are using Jago, make sure the &quot;Pure SGF&quot; option is checked befo
     </message>
     <message>
         <source>File exists</source>
-        <translation type="unfinished"></translation>
+        <translation>文件已存在</translation>
     </message>
     <message>
         <source>A filename matching the pattern and current number already exists.  Overwrite?</source>
@@ -6660,19 +6660,19 @@ Please verify the filename pattern is correct.</source>
     <name>SlideViewDialog</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>View settings</source>
-        <translation type="unfinished"></translation>
+        <translation>视图设置</translation>
     </message>
     <message>
         <source>Exported size:</source>
-        <translation type="unfinished"></translation>
+        <translation>导出尺寸：</translation>
     </message>
     <message>
         <source>The dimensions used when saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>保存时使用的维度。</translation>
     </message>
     <message>
         <source>x</source>
@@ -6680,7 +6680,7 @@ Please verify the filename pattern is correct.</source>
     </message>
     <message>
         <source>Lines of comment text:</source>
-        <translation type="unfinished"></translation>
+        <translation>注释行数：</translation>
     </message>
     <message>
         <source>This controls the font size for the comments display</source>
@@ -6688,11 +6688,11 @@ Please verify the filename pattern is correct.</source>
     </message>
     <message>
         <source>Comment margin:</source>
-        <translation type="unfinished"></translation>
+        <translation>注释边界：</translation>
     </message>
     <message>
         <source>Bold header</source>
-        <translation type="unfinished"></translation>
+        <translation>头部加粗</translation>
     </message>
     <message>
         <source>Choose the color scheme for the comments</source>
